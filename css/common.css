@@ -44,6 +44,7 @@ header .logo:hover {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  cursor: url("img/cursor.png"), auto;
 }
 
 @media only screen and (max-width:768px) {
