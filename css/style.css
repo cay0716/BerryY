@@ -8,7 +8,7 @@
     position: absolute;
     width: 47%;
     top: calc(20px);
-
+	opacity: 0;
     max-width: 800px;
 }
 .index_box {
