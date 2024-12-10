@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <title>대학생</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/style.css">
+<style>
+    .container.cake {
+      background: #ff73a4;
+    }
+    .cake_box {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .cake_box .talk {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      top: calc(50% - 130px);
+      left: calc(50% - 290px);
+      background: url("css/img/talk.svg") no-repeat;
+      text-align: center;
+      animation: talk 1s alternate infinite ease-in-out;
+    }
+    @keyframes talk {
+      100% {scale: 1.2;}
+    }
+    .cake_box .talk p {
+      position: absolute;
+      top: 10px;
+      left: 30px;
+      color: #f2a1bd;
+      font-family: "Fredoka", sans-serif;
+      font-weight: bold;
+    }
+    .cake_box .img_cake {
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      top: calc(50% - 130px);
+      left: calc(50% - 130px);
+      background: url("css/img/s_cake2.svg") no-repeat;
+    }
+    .cake_box .img_s {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      top: calc(50% - 150px);
+      left: calc(50% - 50px);
+      background: url("css/img/s.svg") no-repeat;
+      transform: rotate(-7deg);
+    }
+    @keyframes s {
+      0%{top: calc(50% - 150px);transform: rotate(-7deg);}
+      25%{top:calc(50% - 150px);transform: rotate(-7deg);}
+      50%{top: calc(50% - 380px); transform: rotate(10deg);}
+      75%{top: calc(50% - 240px)}
+      100%{top: calc(50% - 310px);transform: rotate(10deg);}
+    }
+    .cake_box .img_s img {
+      position: absolute;
+      width: 90px;
+      top: 30px;
+      left: 16px;
+      opacity: 1;
+      transform: scale(0) rotate(3deg);
+    }
+    @keyframes s_face {
+      0%{opacity: 0; transform: scale(0);}
+      25%{opacity: 0; transform: scale(1.1);}
+      50%{opacity: 1; transform: scale(1.0);}
+      75%{opacity: 1; transform: scale(1.0);}
+      100%{opacity: 0; transform: scale(0);}
+    }
+
+    .cake_box .img_fork {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      top: calc(50% - 700px);
+      left: calc(50% - 50px);
+      background: url("css/img/s_fork.svg") no-repeat;
+      transform: rotate(-15deg);
+      animation-iteration-count: 2; opacity: 0;
+    }
+    @keyframes fork {
+      0%{top: calc(50% - 800px); transform: rotate(-15deg); opacity: 0;}
+      25%{top: calc(50% - 300px); opacity: 1;}
+      50%{transform: rotate(15deg);top: calc(50% - 500px); opacity: 1;}
+      75%{top: calc(50% - 350px); opacity: 1;}
+      100%{top: calc(50% - 430px); transform:rotate(17deg); opacity:1;}
+    }
+</style>
+</head>
+<body>
+<div class="container cake">
+  <header>
+    <a href="index.html" class="logo"></a>
+  </header>
+  <main>
+    <div class="cake_box">
+      <div class="talk"><p>cLiCk mE!</p></div>
+        <div class="img_cake"></div>
+        <div class="img_fork"></div>
+        <div class="img_s">
+            <img src="css/img/s_face.svg">
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+  let s = document.querySelector('.img_s');
+  let sFace = document.querySelector('.img_s img')
+  let fork = document.querySelector('.img_fork');
+
+  s.addEventListener('click', () => {
+    s.style.animation = 'none';
+    fork.style.animation = 'none';
+    sFace.style.animation = 'none';
+
+    setTimeout(() => {
+      s.style.animation = 's ease-in-out 3.5s forwards alternate';
+      s.style.animationIterationCount = '2';
+      fork.style.animation = 'fork ease-in-out 3.5s forwards alternate';
+      fork.style.animationIterationCount = '2';
+      sFace.style.animation = 's_face cubic-bezier(0.64,-0.51, 0.22, 1.77) 6s forwards alternate';
+      sFace.style.animationIterationCount = '1';
+    }, 10)
+  })
+</script>
+</body>
+</html>
