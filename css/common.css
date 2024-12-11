@@ -47,30 +47,3 @@ header .logo:hover {
   cursor: url("img/cursor.png"), auto;
 }
 
-@media only screen and (max-width:768px) {
-  .container.kind .card > * {
-      grid-area: 1 / 1 / 1 / 1;
-      width: 155px;
-      height: 240px;
-      border-radius: 8px;
-      background: #dbfcb8;
-      background-repeat: no-repeat;
-      background-size: contain;
-      backface-visibility: hidden;
-  }
-  .child_wrap {
-      transform: scale(1);
-  }
-}
-@media only screen and (max-width:468px) {
-  .container.kind .card > * {
-      grid-area: 1 / 1 / 1 / 1;
-      width: 114px;
-      height: 177px;
-      border-radius: 8px;
-      background: #dbfcb8;
-      background-repeat: no-repeat;
-      background-size: contain;
-      backface-visibility: hidden;
-  }
-}
