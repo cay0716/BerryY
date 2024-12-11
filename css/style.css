@@ -8,7 +8,7 @@
     position: absolute;
     width: 47%;
     top: calc(20px);
-	opacity: 0;
+
     max-width: 800px;
 }
 .index_box {
@@ -405,7 +405,7 @@
     left: 50%;
     width: 1000px;
     height: 500px;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
     perspective: 400px;
 }
 .container.baby .pack_wrap .pack {
@@ -512,7 +512,7 @@
 }
 
 /* 
-====== menu2. 아기... */
+============================= menu2. 아기... */
 #child.step1 {
     animation: child_step1 .5s forwards ease;
 }
@@ -1151,7 +1151,6 @@ input[type=range]::-webkit-slider-thumb {
     background: #FEE18C;
 }
 .now_wrap {
-    
     animation: now_wrap 3s ease infinite ;
 }
 @keyframes now_wrap {
@@ -1205,4 +1204,43 @@ input[type=range]::-webkit-slider-thumb {
 }
 .game_box .btn:hover {
     background: #FEE18C;
+}
+
+@media only screen and (max-width:768px) {
+  .container.kind .card > * {
+      width: 155px;
+      height: 240px;
+  }
+  .child_wrap {
+      transform: scale(1);
+  }
+  .container.baby .pack_wrap{
+      transform: translate(-50%, -50%) scale(.8);
+  }
+  .container.elem .btn_box {
+      position: absolute;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+      top: 90%;
+      left: 50%;
+      width: 400px;
+      transform: translateX(-50%);
+  }
+  .middle .img_box {
+      transform: translate(-50%, -50%) scale(.4);
+  }
+  .thread {
+      transform: translate(-54%, -48%) scale(.4);
+  }
+  .container.high main, .container.now main {
+    transform: scale(.5);
+  }
+}
+@media only screen and (max-width:468px) {
+  .container.kind .card > * {
+      width: 114px;
+      height: 177px;
+  }
 }
